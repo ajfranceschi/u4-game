@@ -10,6 +10,12 @@ p {
     padding: 10px;
 }
 
+button {
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+}
+
 .header {
     color: white;
     margin: 10px 0 0 10px;
@@ -47,10 +53,13 @@ p {
 
 .crystals {
     margin: 10px 0 0 10px;
-    height: 80px;
-    width: 80px;
+    /*height: 80px;*/
+    /*width: 80px;*/
     display: inline-block;
     background-color: white;
+    border: none;
+    -webkit-appearance: none;
+    vertical-align: top;
 }
 
 #total-score-div,
@@ -72,8 +81,23 @@ p {
 }
 
 .crystals img {
-    width: 60px;
     margin: auto;
     padding: 10px;
     cursor: pointer;
+}
+
+#redCrystal {
+    background: white url('../assets/images/ruby.png') no-repeat center center;
+}
+
+#blueCrystal {
+    background: white url('../assets/images/slot-machine.png') no-repeat center center;
+}
+
+#yellowCrystal {
+    background: white url('../assets/images/gem.png') no-repeat center center;
+}
+
+#greenCrystal {
+    background: white url('../assets/images/emerald.png') no-repeat center center;
 }

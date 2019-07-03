@@ -21,13 +21,9 @@ $(document).ready(() => {
         score = 0;
         crystalValuesArray = [];
 
-        winningNumber = getRandomNumber(120);
+        winningNumber = getRandomNumber(101) + 19;
 
-        while (winningNumber < 19) {
-            winningNumber = getRandomNumber(120);
-        }
-
-        $('#random-number').html(winningNumber);
+        $('#random-number').text(winningNumber);
         assignCrystalValues();
         updateTotalScore(0);
 
@@ -55,14 +51,10 @@ $(document).ready(() => {
         greenCrystalValue = crystalValuesArray[3];
     };
 
-
-
-
-
-    $('.crystals').on('click', () => {
+    $('.crystals').on('click', (event) => {
         $('#winLoseText').attr('hidden', 'true');
         if (!won && !lose) {
-            switch (event.path[1].id) {
+            switch (event.currentTarget.id) {
                 case 'redCrystal':
                     score += redCrystalValue;
                     break;
@@ -103,19 +95,19 @@ $(document).ready(() => {
     const setWinLoseMessage = (didWin) => {
         $('#winLoseText').attr('hidden', false);
         if (didWin) {
-            $('#winLoseText').html('You won!');
+            $('#winLoseText').text('You won!');
         } else {
-            $('#winLoseText').html('You lost.');
+            $('#winLoseText').text('You lost.');
         }
         reset();
 
     };
 
     const increaseWins = () => {
-        $('#wins').html(wins);
+        $('#wins').text(wins);
     };
     const increaseLosses = () => {
-        $('#losses').html(losses);
+        $('#losses').text(losses);
     };
 
     reset();
