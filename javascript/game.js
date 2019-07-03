@@ -2,6 +2,8 @@ let wins = 0;
 let losses = 0;
 let score = 0;
 let won = false;
+let lose = false;
+let winningNumber = 0;
 let redCrystalValue = 0;
 let blueCrystalValue = 0;
 let yellowCrystalValue = 0;
@@ -12,14 +14,19 @@ const getRandomNumber = (max) => {
     return Math.floor(Math.random() * max);
 };
 
-const initialize = () => {
-    let randomNumber = 0;
+const reset = () => {
+    lose = false;
+    won = false;
+    score = 0;
+    crystalValuesArray = [];
 
-    while (randomNumber < 19) {
-        randomNumber = getRandomNumber(120);
+    winningNumber = getRandomNumber(120);
+
+    while (winningNumber < 19) {
+        winningNumber = getRandomNumber(120);
     }
 
-    $('#random-number').html(randomNumber);
+    $('#random-number').html(winningNumber);
     assignCrystalValues();
     updateTotalScore(0);
 
@@ -52,31 +59,62 @@ const assignCrystalValues = () => {
 
 
 $('.crystals').on('click', () => {
-    switch (event.path[1].id) {
-        case 'redCrystal':
-            score += redCrystalValue;
-            break;
-        case 'blueCrystal':
-            score += blueCrystalValue;
-            break;
-        case 'yellowCrystal':
-            score += yellowCrystalValue;
-            break;
-        case 'greenCrystal':
-            score += greenCrystalValue;
-            break;
-        default:
-            break;
+    $('#winLoseText').attr('hidden', 'true');
+    if (!won && !lose) {
+        switch (event.path[1].id) {
+            case 'redCrystal':
+                score += redCrystalValue;
+                break;
+            case 'blueCrystal':
+                score += blueCrystalValue;
+                break;
+            case 'yellowCrystal':
+                score += yellowCrystalValue;
+                break;
+            case 'greenCrystal':
+                score += greenCrystalValue;
+                break;
+            default:
+                break;
+        }
+        console.log(score);
+        updateTotalScore(score);
+
+        if (score === winningNumber) {
+            won = true;
+            wins++;
+            setWinLoseMessage(won);
+            increaseWins();
+        } else if (score > winningNumber) {
+            lose = true;
+            losses++;
+            setWinLoseMessage(!lose);
+            increaseLosses();
+        }
     }
-
-    console.log(score);
-
-    updateTotalScore(score);
 
 });
 
 const updateTotalScore = score => {
-    $('#total-score').textContent = (score);
+    $('#score').html(score);
 };
 
-initialize();
+const setWinLoseMessage = (didWin) => {
+    $('#winLoseText').attr('hidden', false);
+    if (didWin) {
+        $('#winLoseText').html('You won!');
+    } else {
+        $('#winLoseText').html('You lost.');
+    }
+    reset();
+
+};
+
+const increaseWins = () => {
+    $('#wins').html(wins);
+};
+const increaseLosses = () => {
+    $('#losses').html(losses);
+};
+
+reset();
