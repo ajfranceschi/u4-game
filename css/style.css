@@ -1,0 +1,75 @@
+body {
+    background-color: rgb(11, 0, 61);
+    background-image: radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px), radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px), radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px), radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 2px, transparent 30px);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+    font-family: 'Avenir Next', sans-serif;
+}
+
+p {
+    padding: 10px;
+}
+
+.header {
+    color: white;
+    margin: 10px 0 0 10px;
+    background-color: darkgoldenrod;
+    padding: 10px;
+    font-size: 2rem;
+    width: 275px;
+}
+
+.instructions {
+    margin: 10px 0 0 10px;
+    padding: 10px;
+    color: rgb(64, 137, 68);
+    background-color: rgb(250, 230, 208);
+    width: 400px;
+}
+
+#random-number-div {
+    margin: 10px 0 0 10px;
+    background-color: rgb(88, 200, 137);
+    height: 150px;
+    width: 220px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 3em;
+}
+
+#stats-div {
+    margin: 10px 0 0 10px;
+    background-color: rgb(73, 253, 252);
+    height: 150px;
+    width: 100px;
+    display: inline-block;
+}
+
+.crystals {
+    margin: 10px 0 0 10px;
+    height: 80px;
+    width: 80px;
+    display: inline-block;
+    background-color: white;
+}
+
+#total-score-div,
+#score-div {
+    margin: 10px 0 0 10px;
+    background-color: rgb(41, 162, 149);
+    color: white;
+    padding: 10px;
+    width: 220px;
+}
+
+#score-div {
+    font-size: 3em;
+    height: 150px;
+}
+
+.crystals img {
+    width: 60px;
+    margin: auto;
+    padding: 10px;
+    cursor: pointer;
+}

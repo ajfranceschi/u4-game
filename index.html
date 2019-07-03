@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Collector</title>
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Crystal Collector!</h1>
+    </div>
+
+    <div class="instructions">
+        <p>You will be given a random number at the start of the game.</p>
+        <p>Therea re four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+        <p>You win the game by matching your total score to a random number. You lose the game if your total score goes above the random number.</p>
+        <p>The value of each crystal is hidden from you until you click on it.</p>
+        <p>Each time when the game starts, the values of the crystals will change.</p>
+    </div>
+
+    <div id="random-number-div">
+        <p id='random-number'>39</p>
+    </div>
+    <div id="stats-div">
+        <p id="winLoseText" hidden="true"></p>
+        <p>Wins: <span id="wins">0</span></p>
+        <p>Losses: <span id="losses">0</span></p>
+    </div>
+    <div class="crystalsWrapper">
+        <div class="crystals" id="redCrystal">
+            <img src="./assets/images/ruby.png" alt="">
+        </div>
+        <div class="crystals" id="blueCrystal">
+            <img src="./assets/images/slot-machine.png" alt="">
+        </div>
+        <div class="crystals" id="yellowCristal">
+            <img src="./assets/images/gem.png" alt="">
+        </div>
+        <div class="crystals" id="greenCrystal">
+            <img src="./assets/images/emerald.png" alt="">
+        </div>
+    </div>
+    <div id='total-score-div'>Your total score is: <span id="total-score">0</span></div>
+    <div id='score-div'>39</div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+</body>
+
+</html>
